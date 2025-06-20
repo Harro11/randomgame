@@ -13,8 +13,10 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#arcade">Arcade</a></li>
+                <li><a href="#action">Action</a></li>
                 <li><a href="#puzzle">Puzzle</a></li>
                 <li><a href="#strategy">Strategy</a></li>
+                <li><a href="#shooter">Shooter</a></li>
             </ul>
         </nav>
     </header>
@@ -36,9 +38,13 @@
                     <div class="game-thumbnail tetris"></div>
                     <h3>Tetris</h3>
                 </div>
-                <div class="game-card" onclick="loadGame('2048')">
-                    <div class="game-thumbnail game-2048"></div>
-                    <h3>2048</h3>
+                <div class="game-card" onclick="loadGame('flappy')">
+                    <div class="game-thumbnail flappy"></div>
+                    <h3>Flappy Bird</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('zombie')">
+                    <div class="game-thumbnail zombie"></div>
+                    <h3>Zombie Shooter</h3>
                 </div>
             </div>
         </section>
@@ -58,6 +64,40 @@
                     <div class="game-thumbnail breakout"></div>
                     <h3>Breakout</h3>
                 </div>
+                <div class="game-card" onclick="loadGame('pacman')">
+                    <div class="game-thumbnail pacman"></div>
+                    <h3>Pac-Man</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('frogger')">
+                    <div class="game-thumbnail frogger"></div>
+                    <h3>Frogger</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('asteroids')">
+                    <div class="game-thumbnail asteroids"></div>
+                    <h3>Asteroids</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="action">
+            <h2>Action Games</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="loadGame('zombie')">
+                    <div class="game-thumbnail zombie"></div>
+                    <h3>Zombie Shooter</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('platformer')">
+                    <div class="game-thumbnail platformer"></div>
+                    <h3>Platformer</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('ninja')">
+                    <div class="game-thumbnail ninja"></div>
+                    <h3>Ninja Run</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('racing')">
+                    <div class="game-thumbnail racing"></div>
+                    <h3>Speed Racer</h3>
+                </div>
             </div>
         </section>
 
@@ -76,6 +116,14 @@
                     <div class="game-thumbnail sudoku"></div>
                     <h3>Sudoku</h3>
                 </div>
+                <div class="game-card" onclick="loadGame('tetris')">
+                    <div class="game-thumbnail tetris"></div>
+                    <h3>Tetris</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('puzzle')">
+                    <div class="game-thumbnail puzzle"></div>
+                    <h3>Sliding Puzzle</h3>
+                </div>
             </div>
         </section>
 
@@ -86,13 +134,39 @@
                     <div class="game-thumbnail chess"></div>
                     <h3>Chess</h3>
                 </div>
-                <div class="game-card" onclick="loadGame('tetris')">
-                    <div class="game-thumbnail tetris"></div>
-                    <h3>Tetris</h3>
-                </div>
                 <div class="game-card" onclick="loadGame('minesweeper')">
                     <div class="game-thumbnail minesweeper"></div>
                     <h3>Minesweeper</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('tower')">
+                    <div class="game-thumbnail tower"></div>
+                    <h3>Tower Defense</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('tictactoe')">
+                    <div class="game-thumbnail tictactoe"></div>
+                    <h3>Tic Tac Toe</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="shooter">
+            <h2>Shooter Games</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="loadGame('zombie')">
+                    <div class="game-thumbnail zombie"></div>
+                    <h3>Zombie Shooter</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('asteroids')">
+                    <div class="game-thumbnail asteroids"></div>
+                    <h3>Asteroids</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('spaceinvaders')">
+                    <div class="game-thumbnail spaceinvaders"></div>
+                    <h3>Space Invaders</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('fps')">
+                    <div class="game-thumbnail fps"></div>
+                    <h3>FPS Arena</h3>
                 </div>
             </div>
         </section>
