@@ -118,6 +118,19 @@ section h2 {
 .sudoku { background-image: url('https://placehold.co/300x150/d35400/FFFFFF/png?text=Sudoku'); }
 .chess { background-image: url('https://placehold.co/300x150/2c3e50/FFFFFF/png?text=Chess'); }
 .minesweeper { background-image: url('https://placehold.co/300x150/c0392b/FFFFFF/png?text=Minesweeper'); }
+.flappy { background-image: url('https://placehold.co/300x150/9b59b6/FFFFFF/png?text=FlappyBird'); }
+.zombie { background-image: url('https://placehold.co/300x150/e74c3c/FFFFFF/png?text=ZombieShooter'); }
+.platformer { background-image: url('https://placehold.co/300x150/3498db/FFFFFF/png?text=Platformer'); }
+.ninja { background-image: url('https://placehold.co/300x150/2ecc71/FFFFFF/png?text=NinjaRun'); }
+.pacman { background-image: url('https://placehold.co/300x150/f1c40f/FFFFFF/png?text=PacMan'); }
+.puzzle { background-image: url('https://placehold.co/300x150/1abc9c/FFFFFF/png?text=Puzzle'); }
+.tower { background-image: url('https://placehold.co/300x150/34495e/FFFFFF/png?text=TowerDefense'); }
+.tictactoe { background-image: url('https://placehold.co/300x150/95a5a6/FFFFFF/png?text=TicTacToe'); }
+.spaceinvaders { background-image: url('https://placehold.co/300x150/7f8c8d/FFFFFF/png?text=SpaceInvaders'); }
+.fps { background-image: url('https://placehold.co/300x150/c0392b/FFFFFF/png?text=FPSArena'); }
+.asteroids { background-image: url('https://placehold.co/300x150/34495e/FFFFFF/png?text=Asteroids'); }
+.racing { background-image: url('https://placehold.co/300x150/e67e22/FFFFFF/png?text=Racing'); }
+.frogger { background-image: url('https://placehold.co/300x150/27ae60/FFFFFF/png?text=Frogger'); }
 
 .game-card h3 {
     padding: 1rem;
@@ -163,9 +176,11 @@ section h2 {
 
 #game-container {
     width: 100%;
-    height: 500px;
+    min-height: 500px;
     background-color: #f0f2f5;
     border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
 }
 
 footer {
@@ -176,31 +191,11 @@ footer {
     margin-top: 2rem;
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 1rem;
-    }
-    
-    nav ul {
-        margin-top: 1rem;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .games-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 1rem;
-    }
-    
-    .modal-content {
-        width: 95%;
-        margin: 10% auto;
-    }
-    
-    #game-container {
-        height: 350px;
-    }
-}
+.game-hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border-radius: 5px;
