@@ -1,3 +1,15 @@
+:root {
+    --bg-primary: #0f0f12;
+    --bg-secondary: #16171d;
+    --bg-tertiary: #1e1f26;
+    --accent: #00e5ff;
+    --accent2: #ff003c;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --card-bg: #1e2127;
+    --card-hover: #282a36;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,27 +17,97 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    font-family: 'Rajdhani', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    background-image: 
+        linear-gradient(to bottom, rgba(15, 15, 18, 0.95), rgba(15, 15, 18, 0.98)),
+        url('https://i.ibb.co/YtstqrP/cyberpunk-grid.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Animated background elements */
+.firefly-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.firefly {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px 2px var(--accent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: firefly 6s ease-in-out infinite;
+}
+
+.firefly:nth-child(2) { animation-delay: 0.5s; }
+.firefly:nth-child(3) { animation-delay: 1s; }
+.firefly:nth-child(4) { animation-delay: 1.5s; }
+.firefly:nth-child(5) { animation-delay: 2s; }
+.firefly:nth-child(6) { animation-delay: 2.5s; }
+.firefly:nth-child(7) { animation-delay: 3s; }
+.firefly:nth-child(8) { animation-delay: 3.5s; }
+
+@keyframes firefly {
+    0% {
+        left: random(100) * 1%;
+        top: random(100) * 1%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    50% {
+        left: random(100) * 1%;
+        top: random(100) * 1%;
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        left: random(100) * 1%;
+        top: random(100) * 1%;
+        opacity: 0;
+    }
 }
 
 header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1rem 2rem;
+    background-color: rgba(14, 14, 18, 0.95);
+    color: var(--text-primary);
+    padding: 1.2rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #3498db;
+    letter-spacing: 2px;
+}
+
+.accent {
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 
 nav ul {
@@ -38,49 +120,138 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover, nav ul li a.active {
-    color: #3498db;
+    color: var(--text-primary);
+    background-color: rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
 }
 
 .hero {
-    background: linear-gradient(135deg, #3498db, #8e44ad);
-    color: white;
-    padding: 5rem 2rem;
+    background: linear-gradient(135deg, rgba(20, 20, 30, 0.8), rgba(30, 30, 45, 0.8)),
+                url('https://i.ibb.co/B4TnSGr/cyberpunk-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-primary);
+    padding: 8rem 2rem;
     text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--bg-primary), transparent);
+    pointer-events: none;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 1.5rem auto;
+    color: var(--text-secondary);
+}
+
+.cta-button button {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5);
+}
+
+.cta-button button:hover::before {
+    left: 100%;
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 3rem 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+    position: relative;
 }
 
-section h2 {
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #3498db;
+    color: var(--text-primary);
+    margin-right: 15px;
+}
+
+.section-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), transparent);
 }
 
 .games-grid {
@@ -90,52 +261,97 @@ section h2 {
 }
 
 .game-card {
-    background: white;
-    border-radius: 8px;
+    background: var(--card-bg);
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .game-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 229, 255, 0.2);
+}
+
+.game-card:hover .game-overlay {
+    opacity: 1;
 }
 
 .game-thumbnail {
-    height: 150px;
+    height: 180px;
     background-size: cover;
     background-position: center;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.snake { background-image: url('https://placehold.co/300x150/3498db/FFFFFF/png?text=Snake'); }
-.tetris { background-image: url('https://placehold.co/300x150/e74c3c/FFFFFF/png?text=Tetris'); }
-.game-2048 { background-image: url('https://placehold.co/300x150/f39c12/FFFFFF/png?text=2048'); }
-.pong { background-image: url('https://placehold.co/300x150/27ae60/FFFFFF/png?text=Pong'); }
-.breakout { background-image: url('https://placehold.co/300x150/8e44ad/FFFFFF/png?text=Breakout'); }
-.memory { background-image: url('https://placehold.co/300x150/16a085/FFFFFF/png?text=Memory'); }
-.sudoku { background-image: url('https://placehold.co/300x150/d35400/FFFFFF/png?text=Sudoku'); }
-.chess { background-image: url('https://placehold.co/300x150/2c3e50/FFFFFF/png?text=Chess'); }
-.minesweeper { background-image: url('https://placehold.co/300x150/c0392b/FFFFFF/png?text=Minesweeper'); }
-.flappy { background-image: url('https://placehold.co/300x150/9b59b6/FFFFFF/png?text=FlappyBird'); }
-.zombie { background-image: url('https://placehold.co/300x150/e74c3c/FFFFFF/png?text=ZombieShooter'); }
-.platformer { background-image: url('https://placehold.co/300x150/3498db/FFFFFF/png?text=Platformer'); }
-.ninja { background-image: url('https://placehold.co/300x150/2ecc71/FFFFFF/png?text=NinjaRun'); }
-.pacman { background-image: url('https://placehold.co/300x150/f1c40f/FFFFFF/png?text=PacMan'); }
-.puzzle { background-image: url('https://placehold.co/300x150/1abc9c/FFFFFF/png?text=Puzzle'); }
-.tower { background-image: url('https://placehold.co/300x150/34495e/FFFFFF/png?text=TowerDefense'); }
-.tictactoe { background-image: url('https://placehold.co/300x150/95a5a6/FFFFFF/png?text=TicTacToe'); }
-.spaceinvaders { background-image: url('https://placehold.co/300x150/7f8c8d/FFFFFF/png?text=SpaceInvaders'); }
-.fps { background-image: url('https://placehold.co/300x150/c0392b/FFFFFF/png?text=FPSArena'); }
-.asteroids { background-image: url('https://placehold.co/300x150/34495e/FFFFFF/png?text=Asteroids'); }
-.racing { background-image: url('https://placehold.co/300x150/e67e22/FFFFFF/png?text=Racing'); }
-.frogger { background-image: url('https://placehold.co/300x150/27ae60/FFFFFF/png?text=Frogger'); }
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
-.game-card h3 {
+.game-overlay span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.game-info {
     padding: 1rem;
-    text-align: center;
 }
+
+.game-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.game-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    background-color: rgba(0, 229, 255, 0.1);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* Game thumbnails */
+.snake { background-image: url('https://i.ibb.co/NyLSJbP/neon-snake.jpg'); }
+.tetris { background-image: url('https://i.ibb.co/XFpm7pL/cyber-tetris.jpg'); }
+.game-2048 { background-image: url('https://i.ibb.co/YBmYXtS/cyber-2048.jpg'); }
+.pong { background-image: url('https://i.ibb.co/9qbfzsC/laser-pong.jpg'); }
+.breakout { background-image: url('https://i.ibb.co/PYRdqFg/block-breaker.jpg'); }
+.memory { background-image: url('https://i.ibb.co/qjGrdLs/memory-grid.jpg'); }
+.zombie { background-image: url('https://i.ibb.co/WxJ2xc9/zombie-survival.jpg'); }
+.platformer { background-image: url('https://i.ibb.co/zXkZBh7/neon-runner.jpg'); }
+.asteroids { background-image: url('https://i.ibb.co/xFwMPQh/space-rocks.jpg'); }
+.racing { background-image: url('https://i.ibb.co/XDJwgft/cyber-racer.jpg'); }
+.flappy { background-image: url('https://i.ibb.co/zVjbQDq/neon-bird.jpg'); }
+.frogger { background-image: url('https://i.ibb.co/Jjc7Jt5/cyber-frog.jpg'); }
+.puzzle { background-image: url('https://i.ibb.co/16BgXbH/puzzle-shift.jpg'); }
+.spaceinvaders { background-image: url('https://i.ibb.co/M8WJm4K/alien-invasion.jpg'); }
+.fps { background-image: url('https://i.ibb.co/HdK17z3/fps-arena.jpg'); }
 
 .modal {
     display: none;
@@ -144,58 +360,260 @@ section h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .modal-content {
     position: relative;
-    background-color: #fff;
-    margin: 5% auto;
-    width: 80%;
-    max-width: 800px;
+    background-color: var(--bg-tertiary);
+    margin: 2% auto;
+    width: 90%;
+    max-width: 900px;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+    border: 1px solid rgba(0, 229, 255, 0.1);
 }
 
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 15px;
+    right: 25px;
     font-size: 28px;
     font-weight: bold;
+    color: var(--text-secondary);
     cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close-button:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
 }
 
 #game-title {
     text-align: center;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--text-primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#game-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent2), var(--accent));
 }
 
 #game-container {
     width: 100%;
     min-height: 500px;
-    background-color: #f0f2f5;
-    border: 1px solid #ddd;
-    position: relative;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
     overflow: hidden;
-}
-
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 .game-hud {
     position: absolute;
     top: 10px;
     left: 10px;
-    padding: 5px;
-    background: rgba(0,0,0,0.5);
-    color: white;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.7);
+    color: var(--accent);
     border-radius: 5px;
+    z-index: 10;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    border: 1px solid var(--accent);
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.game-overlay h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px var(--accent);
+}
+
+.game-overlay button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.game-overlay button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.game-button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.game-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.blood-effect {
+    position: absolute;
+    background: #e74c3c;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+footer {
+    background-color: var(--bg-tertiary);
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+footer .logo {
+    margin-bottom: 1rem;
+}
+
+footer p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Canvas styling */
+canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.7rem;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 15px;
+    }
+    
+    #game-container {
+        min-height: 350px;
+    }
+    
+    .game-thumbnail {
+        height: 140px;
+    }
+}
+
+/* Animations */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px var(--accent);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--accent);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
