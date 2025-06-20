@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayZone - Unblocked Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PlayZone</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#arcade">Arcade</a></li>
+                <li><a href="#puzzle">Puzzle</a></li>
+                <li><a href="#strategy">Strategy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Free Unblocked Games</h1>
+        <p>Play anywhere, anytime. No restrictions!</p>
+    </div>
+
+    <main>
+        <section id="featured">
+            <h2>Featured Games</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="loadGame('snake')">
+                    <div class="game-thumbnail snake"></div>
+                    <h3>Snake</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('tetris')">
+                    <div class="game-thumbnail tetris"></div>
+                    <h3>Tetris</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('2048')">
+                    <div class="game-thumbnail game-2048"></div>
+                    <h3>2048</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="arcade">
+            <h2>Arcade Games</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="loadGame('snake')">
+                    <div class="game-thumbnail snake"></div>
+                    <h3>Snake</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('pong')">
+                    <div class="game-thumbnail pong"></div>
+                    <h3>Pong</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('breakout')">
+                    <div class="game-thumbnail breakout"></div>
+                    <h3>Breakout</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="puzzle">
+            <h2>Puzzle Games</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="loadGame('2048')">
+                    <div class="game-thumbnail game-2048"></div>
+                    <h3>2048</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('memory')">
+                    <div class="game-thumbnail memory"></div>
+                    <h3>Memory Match</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('sudoku')">
+                    <div class="game-thumbnail sudoku"></div>
+                    <h3>Sudoku</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy">
+            <h2>Strategy Games</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="loadGame('chess')">
+                    <div class="game-thumbnail chess"></div>
+                    <h3>Chess</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('tetris')">
+                    <div class="game-thumbnail tetris"></div>
+                    <h3>Tetris</h3>
+                </div>
+                <div class="game-card" onclick="loadGame('minesweeper')">
+                    <div class="game-thumbnail minesweeper"></div>
+                    <h3>Minesweeper</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="game-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeGame()">&times;</span>
+            <h2 id="game-title">Game Title</h2>
+            <div id="game-container"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 PlayZone - All games are for entertainment purposes only.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
