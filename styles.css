@@ -1,13 +1,14 @@
 :root {
-    --bg-primary: #0f0f12;
-    --bg-secondary: #16171d;
-    --bg-tertiary: #1e1f26;
+    --bg-primary: #0a0a12;
+    --bg-secondary: #121220;
+    --bg-tertiary: #1a1a2e;
     --accent: #00e5ff;
     --accent2: #ff003c;
+    --accent3: #7b10ff;
     --text-primary: #ffffff;
     --text-secondary: #b3b3b3;
-    --card-bg: #1e2127;
-    --card-hover: #282a36;
+    --card-bg: #171727;
+    --card-hover: #1f1f35;
 }
 
 * {
@@ -21,7 +22,7 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     background-image: 
-        linear-gradient(to bottom, rgba(15, 15, 18, 0.95), rgba(15, 15, 18, 0.98)),
+        linear-gradient(to bottom, rgba(10, 10, 18, 0.95), rgba(10, 10, 18, 0.98)),
         url('https://i.ibb.co/YtstqrP/cyberpunk-grid.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -31,7 +32,7 @@ body {
 }
 
 /* Animated background elements */
-.firefly-container {
+.particle-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -39,9 +40,10 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 0;
+    overflow: hidden;
 }
 
-.firefly {
+.particle {
     position: absolute;
     width: 3px;
     height: 3px;
@@ -49,43 +51,85 @@ body {
     box-shadow: 0 0 10px 2px var(--accent);
     border-radius: 50%;
     opacity: 0;
-    animation: firefly 6s ease-in-out infinite;
+    animation: float 15s ease-in-out infinite;
 }
 
-.firefly:nth-child(2) { animation-delay: 0.5s; }
-.firefly:nth-child(3) { animation-delay: 1s; }
-.firefly:nth-child(4) { animation-delay: 1.5s; }
-.firefly:nth-child(5) { animation-delay: 2s; }
-.firefly:nth-child(6) { animation-delay: 2.5s; }
-.firefly:nth-child(7) { animation-delay: 3s; }
-.firefly:nth-child(8) { animation-delay: 3.5s; }
+.particle:nth-child(1) { 
+    animation-delay: 0s; 
+    left: 20%; 
+    top: 80%;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px 2px var(--accent);
+}
+.particle:nth-child(2) { 
+    animation-delay: 2s; 
+    left: 60%; 
+    top: 20%;
+    background-color: var(--accent2);
+    box-shadow: 0 0 10px 2px var(--accent2);
+}
+.particle:nth-child(3) { 
+    animation-delay: 4s; 
+    left: 80%; 
+    top: 50%;
+    background-color: var(--accent3);
+    box-shadow: 0 0 10px 2px var(--accent3);
+}
+.particle:nth-child(4) { 
+    animation-delay: 6s; 
+    left: 40%; 
+    top: 30%;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px 2px var(--accent);
+}
+.particle:nth-child(5) { 
+    animation-delay: 8s; 
+    left: 10%; 
+    top: 40%;
+    background-color: var(--accent2);
+    box-shadow: 0 0 10px 2px var(--accent2);
+}
+.particle:nth-child(6) { 
+    animation-delay: 10s; 
+    left: 50%; 
+    top: 70%;
+    background-color: var(--accent3);
+    box-shadow: 0 0 10px 2px var(--accent3);
+}
+.particle:nth-child(7) { 
+    animation-delay: 12s; 
+    left: 90%; 
+    top: 90%;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px 2px var(--accent);
+}
+.particle:nth-child(8) { 
+    animation-delay: 14s; 
+    left: 30%; 
+    top: 10%;
+    background-color: var(--accent2);
+    box-shadow: 0 0 10px 2px var(--accent2);
+}
 
-@keyframes firefly {
+@keyframes float {
     0% {
-        left: random(100) * 1%;
-        top: random(100) * 1%;
         opacity: 0;
+        transform: translateY(0) rotate(0deg) scale(1);
     }
     10% {
-        opacity: 0.5;
-    }
-    50% {
-        left: random(100) * 1%;
-        top: random(100) * 1%;
         opacity: 1;
     }
     90% {
-        opacity: 0.5;
+        opacity: 1;
     }
     100% {
-        left: random(100) * 1%;
-        top: random(100) * 1%;
         opacity: 0;
+        transform: translateY(-100vh) rotate(720deg) scale(0);
     }
 }
 
 header {
-    background-color: rgba(14, 14, 18, 0.95);
+    background-color: rgba(10, 10, 18, 0.95);
     color: var(--text-primary);
     padding: 1.2rem 2rem;
     display: flex;
@@ -187,7 +231,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .cta-button button {
     margin-top: 1.5rem;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background: linear-gradient(135deg, var(--accent), var(--accent3));
     color: white;
     border: none;
     padding: 12px 30px;
@@ -343,15 +387,22 @@ section {
 .pong { background-image: url('https://i.ibb.co/9qbfzsC/laser-pong.jpg'); }
 .breakout { background-image: url('https://i.ibb.co/PYRdqFg/block-breaker.jpg'); }
 .memory { background-image: url('https://i.ibb.co/qjGrdLs/memory-grid.jpg'); }
-.zombie { background-image: url('https://i.ibb.co/WxJ2xc9/zombie-survival.jpg'); }
+.shooter { background-image: url('https://i.ibb.co/WxJ2xc9/zombie-survival.jpg'); }
 .platformer { background-image: url('https://i.ibb.co/zXkZBh7/neon-runner.jpg'); }
 .asteroids { background-image: url('https://i.ibb.co/xFwMPQh/space-rocks.jpg'); }
 .racing { background-image: url('https://i.ibb.co/XDJwgft/cyber-racer.jpg'); }
 .flappy { background-image: url('https://i.ibb.co/zVjbQDq/neon-bird.jpg'); }
+.doodle { background-image: url('https://i.ibb.co/s3RK1h4/cyber-jumper.jpg'); }
+.runaway { background-image: url('https://i.ibb.co/4pVx8x2/runaway.jpg'); }
+.tank { background-image: url('https://i.ibb.co/JkBZ3yF/tank-battle.jpg'); }
 .frogger { background-image: url('https://i.ibb.co/Jjc7Jt5/cyber-frog.jpg'); }
 .puzzle { background-image: url('https://i.ibb.co/16BgXbH/puzzle-shift.jpg'); }
 .spaceinvaders { background-image: url('https://i.ibb.co/M8WJm4K/alien-invasion.jpg'); }
-.fps { background-image: url('https://i.ibb.co/HdK17z3/fps-arena.jpg'); }
+.shooter3d { background-image: url('https://i.ibb.co/HdK17z3/fps-arena.jpg'); }
+.pacman { background-image: url('https://i.ibb.co/mqKWPNL/neon-maze.jpg'); }
+.tron { background-image: url('https://i.ibb.co/fdfLTrT/light-cycles.jpg'); }
+.galaga { background-image: url('https://i.ibb.co/qM7hK7y/galactic-shooter.jpg'); }
+.missile { background-image: url('https://i.ibb.co/1qmSHnh/missile-command.jpg'); }
 
 .modal {
     display: none;
@@ -452,6 +503,7 @@ section {
     justify-content: center;
     align-items: center;
     z-index: 20;
+    color: white;
 }
 
 .game-overlay h3 {
@@ -460,6 +512,12 @@ section {
     color: var(--text-primary);
     font-family: 'Orbitron', sans-serif;
     text-shadow: 0 0 10px var(--accent);
+}
+
+.game-overlay p {
+    margin-bottom: 20px;
+    max-width: 80%;
+    text-align: center;
 }
 
 .game-overlay button {
@@ -546,6 +604,40 @@ canvas {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Mobile controls */
+.mobile-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+.mobile-button {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 229, 255, 0.2);
+    border: 1px solid var(--accent);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+    gap: 5px;
+}
+
+.action-button {
+    background: rgba(255, 0, 60, 0.2);
+    border: 1px solid var(--accent2);
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -591,6 +683,25 @@ canvas {
     .game-thumbnail {
         height: 140px;
     }
+}
+
+/* Game-specific styles */
+.particle-effect {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.trail {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fade 0.5s forwards;
+}
+
+@keyframes fade {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 /* Animations */
