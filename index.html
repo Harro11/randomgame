@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="firefly-container">
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
+    <div class="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
 
     <header>
@@ -28,6 +28,7 @@
                 <li><a href="#action">Action</a></li>
                 <li><a href="#puzzle">Puzzle</a></li>
                 <li><a href="#shooter">Shooter</a></li>
+                <li><a href="#retro">Retro</a></li>
             </ul>
         </nav>
     </header>
@@ -89,17 +90,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="game-card" onclick="loadGame('zombie')">
-                    <div class="game-thumbnail zombie">
+                <div class="game-card" onclick="loadGame('doodle')">
+                    <div class="game-thumbnail doodle">
                         <div class="game-overlay">
                             <span>Play Now</span>
                         </div>
                     </div>
                     <div class="game-info">
-                        <h3>Zombie Survival</h3>
+                        <h3>Cyber Jumper</h3>
                         <div class="game-tags">
-                            <span class="tag">Shooter</span>
-                            <span class="tag">Horror</span>
+                            <span class="tag">Arcade</span>
+                            <span class="tag">Endless</span>
                         </div>
                     </div>
                 </div>
@@ -142,6 +143,26 @@
                         <h3>Block Breaker</h3>
                     </div>
                 </div>
+                <div class="game-card" onclick="loadGame('flappy')">
+                    <div class="game-thumbnail flappy">
+                        <div class="game-overlay">
+                            <span>Play Now</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Neon Bird</h3>
+                    </div>
+                </div>
+                <div class="game-card" onclick="loadGame('doodle')">
+                    <div class="game-thumbnail doodle">
+                        <div class="game-overlay">
+                            <span>Play Now</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Cyber Jumper</h3>
+                    </div>
+                </div>
                 <div class="game-card" onclick="loadGame('frogger')">
                     <div class="game-thumbnail frogger">
                         <div class="game-overlay">
@@ -161,14 +182,14 @@
                 <div class="section-line"></div>
             </div>
             <div class="games-grid">
-                <div class="game-card" onclick="loadGame('zombie')">
-                    <div class="game-thumbnail zombie">
+                <div class="game-card" onclick="loadGame('runaway')">
+                    <div class="game-thumbnail runaway">
                         <div class="game-overlay">
                             <span>Play Now</span>
                         </div>
                     </div>
                     <div class="game-info">
-                        <h3>Zombie Survival</h3>
+                        <h3>Runaway</h3>
                     </div>
                 </div>
                 <div class="game-card" onclick="loadGame('platformer')">
@@ -191,14 +212,14 @@
                         <h3>Cyber Racer</h3>
                     </div>
                 </div>
-                <div class="game-card" onclick="loadGame('flappy')">
-                    <div class="game-thumbnail flappy">
+                <div class="game-card" onclick="loadGame('tank')">
+                    <div class="game-thumbnail tank">
                         <div class="game-overlay">
                             <span>Play Now</span>
                         </div>
                     </div>
                     <div class="game-info">
-                        <h3>Neon Bird</h3>
+                        <h3>Tank Battle</h3>
                     </div>
                 </div>
             </div>
@@ -259,14 +280,14 @@
                 <div class="section-line"></div>
             </div>
             <div class="games-grid">
-                <div class="game-card" onclick="loadGame('zombie')">
-                    <div class="game-thumbnail zombie">
+                <div class="game-card" onclick="loadGame('shooter')">
+                    <div class="game-thumbnail shooter">
                         <div class="game-overlay">
                             <span>Play Now</span>
                         </div>
                     </div>
                     <div class="game-info">
-                        <h3>Zombie Survival</h3>
+                        <h3>Target Shooter</h3>
                     </div>
                 </div>
                 <div class="game-card" onclick="loadGame('asteroids')">
@@ -289,14 +310,63 @@
                         <h3>Alien Invasion</h3>
                     </div>
                 </div>
-                <div class="game-card" onclick="loadGame('fps')">
-                    <div class="game-thumbnail fps">
+                <div class="game-card" onclick="loadGame('shooter3d')">
+                    <div class="game-thumbnail shooter3d">
                         <div class="game-overlay">
                             <span>Play Now</span>
                         </div>
                     </div>
                     <div class="game-info">
                         <h3>FPS Arena</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="retro">
+            <div class="section-header">
+                <h2>Retro Games</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="games-grid">
+                <div class="game-card" onclick="loadGame('pacman')">
+                    <div class="game-thumbnail pacman">
+                        <div class="game-overlay">
+                            <span>Play Now</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Neon Maze</h3>
+                    </div>
+                </div>
+                <div class="game-card" onclick="loadGame('tron')">
+                    <div class="game-thumbnail tron">
+                        <div class="game-overlay">
+                            <span>Play Now</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Light Cycles</h3>
+                    </div>
+                </div>
+                <div class="game-card" onclick="loadGame('galaga')">
+                    <div class="game-thumbnail galaga">
+                        <div class="game-overlay">
+                            <span>Play Now</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Galactic Shooter</h3>
+                    </div>
+                </div>
+                <div class="game-card" onclick="loadGame('missile')">
+                    <div class="game-thumbnail missile">
+                        <div class="game-overlay">
+                            <span>Play Now</span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3>Missile Command</h3>
                     </div>
                 </div>
             </div>
